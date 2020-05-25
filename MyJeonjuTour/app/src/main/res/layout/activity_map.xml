@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Spinner
+        android:id="@+id/spinner"
+        android:entries="@array/publicPlace"
+        android:layout_above="@id/map_view"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+    android:id="@+id/btn_myroute"
+    android:text="설정 경로 확인하기"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_save"
+        android:text="나의 경로 저장하기"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_clear"
+            android:text="경로 초기화"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <net.daum.mf.map.api.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        layout="@layout/view_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

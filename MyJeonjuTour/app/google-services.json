@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "159989021265",
+    "firebase_url": "https://myjeonjutour-575d1.firebaseio.com",
+    "project_id": "myjeonjutour-575d1",
+    "storage_bucket": "myjeonjutour-575d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159989021265:android:45317e098658aa7aafd670",
+        "android_client_info": {
+          "package_name": "com.masil.myjeonjutour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159989021265-hkg24f2ps9mjmemjgp34bd0et8atb9jf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.masil.myjeonjutour",
+            "certificate_hash": "a2b2290dda23137cba3814a94883b83d43fdf98b"
+          }
+        },
+        {
+          "client_id": "159989021265-pqhlit9pi5uak4a2te7ot8i9r0i0mnbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPY-EphuDlmDC4xOAk1mz3BKzgip2jdEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159989021265-pqhlit9pi5uak4a2te7ot8i9r0i0mnbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

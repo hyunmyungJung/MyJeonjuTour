@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">마이전주투어</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="native_app_key">3622d0203bafa3f367f1d27577985916</string>
+    <string name="restapi_key">KakaoAK 3c68181d849bf9b3b9806bae6cd61f2f</string>
+</resources>
