@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="publicPlace">
+        <item>주차장</item>
+        <item>관광</item>
+        <item>전통시장</item>
+    </string-array>
+</resources>

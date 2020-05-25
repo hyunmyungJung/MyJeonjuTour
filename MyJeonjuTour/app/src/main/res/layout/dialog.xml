@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/routename"
+        android:hint="경로 이름을 정해주세요"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="15dp"
+        android:background="#ffffff"
+        android:maxLength="10"/>
+
+
+</LinearLayout>

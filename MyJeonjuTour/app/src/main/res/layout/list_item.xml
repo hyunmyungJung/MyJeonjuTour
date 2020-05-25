@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/vi_view"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:background="#ffffff"
+        android:gravity="left"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/checkroute"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="나의 루트 확인하기"
+            android:textSize="20sp"
+            android:background="@drawable/button_shape"
+            >
+        </Button>
+    </LinearLayout>
+</LinearLayout>
