@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:background="#FFFFFF"
     android:layout_width="match_parent"
@@ -7,21 +8,61 @@
     android:orientation="vertical"
     android:weightSum="2560">
 
+
+
     <LinearLayout
-        android:gravity="center"
+        android:id="@+id/Linear"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="300"
-        android:paddingTop="10dp">
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="5sp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="4dp">
+
+        <ImageButton
+            android:id="@+id/back_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/back_icon" />
 
         <TextView
-            android:text="회원가입"
-            android:layout_width="wrap_content"
+            android:id="@+id/jointitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="회원가입"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/nomean"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text=""
+            android:layout_weight="1"
+            android:textSize="30sp" />
+
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -36,7 +77,52 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="250"
+            android:weightSum="1440"
             android:layout_marginTop="15dp"
+            >
+
+            <EditText
+                android:id="@+id/InputName"
+                android:hint="이름"
+                android:paddingLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1300"
+                android:textSize="15dp"
+                android:inputType="text"
+                android:background="@drawable/boxedge"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="250"
+            android:weightSum="1440"
+            >
+
+            <EditText
+                android:id="@+id/InputNum"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1300"
+                android:background="@drawable/boxedge"
+                android:hint="닉네임"
+                android:maxLength="6"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="250"
             android:weightSum="1440">
 
@@ -45,11 +131,12 @@
                 android:layout_width="0dp"
                 android:layout_height="35dp"
                 android:layout_weight="1300"
-                android:background="#ffffff"
                 android:hint="아이디 (이메일을 입력하세요)"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
+                android:background="@drawable/boxedge"
+
                 android:textSize="15dp" />
             <requestFocus/>
             <!-- 숫자만 입력 가능 -->
@@ -74,8 +161,9 @@
                 android:layout_weight="1300"
                 android:textSize="15dp"
                 android:inputType="textPassword"
-                android:background="#ffffff"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:background="@drawable/boxedge"
+                />
             <!-- 6~16자 영문 대 소문자, 숫자, 특수문자를 사용 -->
 
         </LinearLayout>
@@ -96,7 +184,7 @@
                 android:layout_weight="1300"
                 android:textSize="15dp"
                 android:inputType="textPassword"
-                android:background="#ffffff"
+                android:background="@drawable/boxedge"
                 android:singleLine="true"/>
             <!-- 6~16자 영문 대 소문자, 숫자, 특수문자를 사용 -->
 
@@ -116,48 +204,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="250"
-            android:weightSum="1440">
 
-            <EditText
-                android:id="@+id/InputName"
-                android:hint="이름"
-                android:paddingLeft="10dp"
-                android:layout_width="0dp"
-                android:layout_height="35dp"
-                android:layout_weight="1300"
-                android:textSize="15dp"
-                android:inputType="text"
-                android:background="#ffffff"
-                android:singleLine="true" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="250"
-            android:weightSum="1440">
-
-            <EditText
-                android:id="@+id/InputNum"
-                android:layout_width="0dp"
-                android:layout_height="35dp"
-                android:layout_weight="1300"
-                android:background="#ffffff"
-                android:hint="닉네임"
-                android:maxLength="6"
-                android:inputType="text"
-                android:paddingLeft="10dp"
-                android:singleLine="true"
-                android:textSize="15dp" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:gravity="center"
@@ -168,7 +215,7 @@
 
             <EditText
                 android:id="@+id/phone"
-                android:hint="핸드폰번호 (- 구분 없이 적어주세요)"
+                android:hint="핸드폰번호 (- 구분 없이 적어주세요) 빼주세용"
                 android:paddingLeft="10dp"
                 android:layout_width="0dp"
                 android:layout_height="35dp"

@@ -10,6 +10,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.bumptech.glide.Glide;
 import com.masil.myjeonjutour.LoginActivity;
 import com.masil.myjeonjutour.R;
 
@@ -26,19 +29,27 @@ public class Splashscreen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
+
         StartAnimations();
+
     }
 
     private void StartAnimations() {
+
+
+
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
-        LinearLayout l =(LinearLayout) findViewById(R.id.lin_lay);
+        ConstraintLayout l =(ConstraintLayout) findViewById(R.id.lin_lay);
         l.clearAnimation();
         l.startAnimation(anim);
 
        /* anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         anim.reset();*/
+        // 이미지뷰
         ImageView iv = (ImageView) findViewById(R.id.splash);
+        Glide.with(this).load(R.drawable.splashgif).into(iv);
+
         iv.clearAnimation();
         iv.startAnimation(anim);
 
@@ -48,7 +59,7 @@ public class Splashscreen extends Activity {
                 try {
                     int waited = 0;
                     // Splash screen pause time
-                    while (waited < 3500) {
+                    while (waited < 3400) {
                         sleep(100);
                         waited += 100;
                     }
