@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Dimension;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,6 +57,9 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.login);
         signUp = findViewById(R.id.signup);
 
+
+
+
         // 로그인 작업의 onCreate 메서드에서 FirebaseAuth 객체의 공유 인스턴스를 가져옵니다.
         mAuth = FirebaseAuth.getInstance();
 
@@ -68,12 +72,13 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         SignInButton btn_google_login = findViewById(R.id.btn_google_login);
-       btn_google_login.setOnClickListener(new View.OnClickListener() {
+        btn_google_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signIn();
             }
         });
+
 
     }
 
