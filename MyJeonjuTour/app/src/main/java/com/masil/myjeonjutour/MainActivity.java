@@ -46,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, CheckRouteListActivity.class));
             }
         });
+
+        Button btn_ask = findViewById(R.id.btn_ask);
+            startActivity(new Intent(MainActivity.this, mypage.class));
+
     }
 
 

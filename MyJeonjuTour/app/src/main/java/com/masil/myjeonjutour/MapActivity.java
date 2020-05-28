@@ -110,17 +110,19 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_map);
 
 
         readData();
+
         gpsTracker = new GpsTracker(MapActivity.this);
         mMapView = (MapView) findViewById(R.id.map_view);
         //mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setCurrentLocationEventListener(this);
         mMapView.setPOIItemEventListener(this);
         mMapView.removeAllPOIItems();
+
+
 
         mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);

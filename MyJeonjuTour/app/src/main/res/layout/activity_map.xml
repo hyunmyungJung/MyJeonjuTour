@@ -5,17 +5,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <Spinner
         android:id="@+id/spinner"
         android:entries="@array/publicPlace"
         android:layout_above="@id/map_view"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
+
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
     <Button
     android:id="@+id/btn_myroute"
     android:text="설정 경로 확인하기"

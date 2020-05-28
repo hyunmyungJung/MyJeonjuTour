@@ -2,14 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.masil.myjeonjutour">
 
-
-    <uses-permission android:name="android.permission.INTERNET">
-    </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -18,24 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_tour_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".JoinActivity"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".mypage"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".JoinActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".service.Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".PlaceDetailActivity"/>
-        <activity android:name=".MapActivity"/>
-        <activity android:name=".CheckRouteListActivity"/>
-        <activity android:name=".CheckRouteActivity"/>
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="3622d0203bafa3f367f1d27577985916"/>
+        <activity android:name=".PlaceDetailActivity" />
+        <activity android:name=".MapActivity" />
+        <activity android:name=".CheckRouteListActivity" />
+        <activity android:name=".CheckRouteActivity" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="3622d0203bafa3f367f1d27577985916" />
     </application>
 
 </manifest>
