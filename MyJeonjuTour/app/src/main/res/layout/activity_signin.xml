@@ -73,7 +73,6 @@
             android:gravity="center_vertical"
             android:hint="아이디"
             android:inputType="textPersonName"
-            android:maxLength="7"
             android:textColorHint="#ffffff"
             android:paddingStart="5sp"
             android:fontFamily="@font/nanumsquareroundb"
@@ -105,7 +104,6 @@
             android:textColorHint="#ffffff"
             android:hint="비밀번호"
             android:inputType="textPassword"
-            android:maxLength="7"
             android:paddingStart="5sp"
             android:fontFamily="@font/nanumsquareroundb"
             />

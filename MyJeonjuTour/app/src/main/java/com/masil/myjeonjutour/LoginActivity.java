@@ -115,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         // 로그인이 되어있을 시 취할 코드 삽입
     }
+    
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.login:
@@ -130,6 +131,7 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     }
+
     private void startLogin(String loginid, String loginpwd) {
         mAuth.signInWithEmailAndPassword(loginid, loginpwd)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
