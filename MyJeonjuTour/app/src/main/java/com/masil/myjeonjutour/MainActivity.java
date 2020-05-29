@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btn_ask = findViewById(R.id.btn_ask);
-            startActivity(new Intent(MainActivity.this, mypage.class));
 
     }
 
