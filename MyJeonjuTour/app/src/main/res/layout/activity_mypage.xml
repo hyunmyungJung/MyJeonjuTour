@@ -15,7 +15,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="5sp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="4dp">
 
         <ImageButton
             android:id="@+id/back_icon"
@@ -61,7 +63,7 @@
 
 
     <Button
-        android:id="@+id/checkroute"
+        android:id="@+id/btn_myroute"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="내가 짠 경로 확인"
@@ -105,7 +107,7 @@
 
 
     <Button
-        android:id="@+id/logout"
+        android:id="@+id/btn_google_logout"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="로그아웃"
