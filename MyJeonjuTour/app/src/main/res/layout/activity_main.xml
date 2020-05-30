@@ -176,6 +176,56 @@ android:orientation="vertical">
             />
     </TableRow>
 
+    <TableRow>
+
+        <ImageButton
+            android:id="@+id/check_weather"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/weather" />
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside" />
+
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tv_dday5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="전주 날씨확인"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:fontFamily="@font/nanumsquareroundb"
+            />
+
+        <TextView
+            android:id="@+id/tv_dday6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:fontFamily="@font/nanumsquareroundb"
+            />
+    </TableRow>
+
 </TableLayout>
 
 <!--    <ImageView-->

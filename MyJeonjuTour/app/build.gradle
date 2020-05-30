@@ -64,7 +64,11 @@ dependencies {
     // splash - gif 이미지 넣기 위한 두 줄
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
 //    implementation 'com.shobhitpuri.custombuttons:google-signin:1.0.0'
+
+    // openweather api를 위한
+    implementation 'com.android.volley:volley:1.1.0'
 
 }

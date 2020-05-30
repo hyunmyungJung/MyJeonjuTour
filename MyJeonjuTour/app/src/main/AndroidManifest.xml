@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.masil.myjeonjutour">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 유튜브튭튭 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_tour_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mypage"></activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name=".youtube.YoutubeActivity" />
+        <activity android:name=".mypage" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".service.Splashscreen">
