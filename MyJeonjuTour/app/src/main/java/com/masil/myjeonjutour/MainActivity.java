@@ -3,7 +3,6 @@ package com.masil.myjeonjutour;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.masil.myjeonjutour.youtube.YoutubeActivity;
 
 import java.util.ArrayList;
 
@@ -120,6 +119,27 @@ public class MainActivity extends AppCompatActivity {
             fragmentAdapter.addItem(imageFragment);
         }
         fragmentAdapter.notifyDataSetChanged();
+
+
+        // 유튜브 가기
+        ImageButton btn_youtube = findViewById(R.id.youtube_imagebutton);
+
+        btn_youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, YoutubeActivity.class));
+            }
+        });
+
+        // 전주 날씨확인 가기
+        ImageButton btn_weather = findViewById(R.id.check_weather);
+
+        btn_weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, WeatherActivity.class));
+            }
+        });
 
 
     }
