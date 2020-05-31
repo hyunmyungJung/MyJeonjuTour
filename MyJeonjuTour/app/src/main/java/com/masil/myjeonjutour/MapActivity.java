@@ -97,41 +97,73 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
     private MapPoint mapPoint;
     private Button btn_myroute,btn_save,btn_clear;
     private String tname,rname;
+    private Spinner spinner;
     //private MapPOIItem marker = new MapPOIItem();
     private RelativeLayout mLoaderLayout;
     //private ServiceApi service;
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     String user_id = user.getUid();
-    int tcount;
     //private ServiceApi service;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_map);
+
+        mMapView = (MapView) findViewById(R.id.map_view);
+        mLoaderLayout = findViewById(R.id.loaderLayout);
+        btn_myroute=findViewById(R.id.btn_myroute);
+        btn_save=findViewById(R.id.btn_save);
+        btn_clear=findViewById(R.id.btn_clear);
+        mLoaderLayout.setVisibility(View.VISIBLE);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        if (!checkLocationServicesStatus()) {
+            showDialogForLocationServiceSetting();
+
+
+        } else {
+
+            checkRunTimePermission();
+
+        }
 
 
         readData();
+
+        db.collection("users").document(user_id)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                //닉네임 받아오기
+                                tname = document.getString("NickName");
+                            } else {
+                                Log.d(TAG, "No such document");
+                            }
+                        } else {
+                            Log.d(TAG, "get failed with ", task.getException());
+                        }
+                    }
+                });
+
+        init();
+    }
+    private void init(){
         gpsTracker = new GpsTracker(MapActivity.this);
-        mMapView = (MapView) findViewById(R.id.map_view);
-        //mMapView.setDaumMapApiKey(MapApiConst.DAUM_MAPS_ANDROID_APP_API_KEY);
         mMapView.setCurrentLocationEventListener(this);
         mMapView.setPOIItemEventListener(this);
         mMapView.removeAllPOIItems();
 
-        mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        mLoaderLayout = findViewById(R.id.loaderLayout);
-        mLoaderLayout.setVisibility(View.VISIBLE);
-        btn_myroute=findViewById(R.id.btn_myroute);
-        btn_save=findViewById(R.id.btn_save);
-        btn_clear=findViewById(R.id.btn_clear);
-        gpsTracker = new GpsTracker(MapActivity.this);
-        currentMarker();
+       // mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
 
+
+
+        currentMarker();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -149,7 +181,7 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
                     mMapView.removeAllPOIItems();
                     mMapView.removeAllPolylines();
                     getTraditional(traditionals);
-                    mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
+                   // mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
                 }
             }
 
@@ -170,35 +202,6 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
                 }
             }
         });
-
-        if (!checkLocationServicesStatus()) {
-
-            showDialogForLocationServiceSetting();
-        } else {
-
-            checkRunTimePermission();
-        }
-
-        db.collection("users").document(user_id)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                //닉네임 받아오기
-                                tname = document.getString("NickName");
-                                tcount = Integer.valueOf(document.getString("MytourCount"));
-                            } else {
-                                Log.d(TAG, "No such document");
-                            }
-                        } else {
-                            Log.d(TAG, "get failed with ", task.getException());
-                        }
-                    }
-                });
-
 
     }
 
@@ -242,8 +245,9 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
                                     String rname=edittext.getText().toString();
                                     Map<String, Object> routename = new HashMap<>();
                                     routename.put("routename", rname);
+                                    routename.put("content",null);
                                     db.collection("users").document(user_id)
-                                            .collection("routename").document()
+                                            .collection("routename").document(rname)
                                             .set(routename)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 public void onSuccess(Void aVoid) {
@@ -279,7 +283,6 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
                                                     }
                                                 });
                                     }
-                                    db.collection("users").document(user_id).update("MytourCount",Integer.toString(++tcount));
                                     Toast.makeText(getApplicationContext(),edittext.getText().toString()+"경로가 추가되었습니다" ,Toast.LENGTH_LONG).show();
                                 }
                             });

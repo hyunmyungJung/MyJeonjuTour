@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1600"
+        android:background="#ffffff"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:weightSum="2260">
+
+        <EditText
+            android:id="@+id/InputContent"
+            android:hint="경로에 원하는 메모를 작성해주세요"
+            android:gravity="top"
+            android:textColor="#938888"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1500"
+            android:textSize="15dp"
+            android:background="#ffffff" />
+        <Button
+            android:id="@+id/Writebtn"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_weight="150"
+            android:layout_gravity="center"
+            android:background="@drawable/button_shape"
+            android:text="등록하기" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -57,8 +57,6 @@ public class CheckRouteListActivity extends Activity{
                             if (document.exists()) {
                                 //닉네임 받아오기
                                 tname = document.getString("NickName");
-                                tcount = Integer.valueOf(document.getString("MytourCount"));
-                                System.out.println("NickName"+tname+"MytourCount"+tcount);
                                 init();
                             } else {
                                 Log.d(TAG, "No such document");
@@ -100,7 +98,7 @@ public class CheckRouteListActivity extends Activity{
                         }
                         adapter = new CheckRouteListAdapter(CheckRouteListActivity.this, routename);
                         lv.setAdapter(adapter);
-                        //lv.setDivider(null); 구분선을 없에고 싶으면 null 값을 set합니다.
+                        lv.setDivider(null);
                         lv.setDividerHeight(5);// 구분선의 굵기를 좀 더 크게 하고싶으면 숫자로 높이 지정가능.*/
                         // Add a new document with a generated ID
                     }

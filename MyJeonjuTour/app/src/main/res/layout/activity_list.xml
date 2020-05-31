@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.myjeonjutour.MainActivity"
+    tools:context="com.masil.myjeonjutour.MainActivity"
     android:orientation="vertical">
             <ListView
                 android:id="@+id/listView"

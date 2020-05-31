@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn_kakao_map = findViewById(R.id.btn_kakao_map);
         Button btn_google_logout = findViewById(R.id.btn_google_logout);
         Button btn_myroute = findViewById(R.id.btn_myroute);
+        Button btn_board = findViewById(R.id.btn_board);
 
         btn_kakao_map.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CheckRouteListActivity.class));
+            }
+        });
+
+        btn_board.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BoardListActivity.class));
             }
         });
     }

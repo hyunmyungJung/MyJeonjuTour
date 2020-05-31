@@ -18,11 +18,6 @@
         android:roundIcon="@mipmap/ic_launcher_tour_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".JoinActivity"/>
-        <activity android:name=".MainActivity"/>
         <activity android:name=".service.Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,10 +26,17 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".LoginActivity">
+        </activity>
+        <activity android:name=".JoinActivity"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".PlaceDetailActivity"/>
         <activity android:name=".MapActivity"/>
         <activity android:name=".CheckRouteListActivity"/>
         <activity android:name=".CheckRouteActivity"/>
+        <activity android:name='.BoardListActivity'/>
+        <activity android:name=".BoardListWrite"/>
+        <activity android:name=".BoardDetailActivity"/>
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="3622d0203bafa3f367f1d27577985916"/>
     </application>
 

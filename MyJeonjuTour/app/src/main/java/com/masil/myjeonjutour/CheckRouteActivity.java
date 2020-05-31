@@ -12,6 +12,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -40,6 +42,9 @@ public class CheckRouteActivity extends AppCompatActivity implements MapView.Cur
     private MapPolyline polyline;
     private MapPoint mapPoint;
     int tcount;
+    RouteMemoWriteFragment fragment1;
+    RouteMemoDetailFragment fragment2;
+    String memo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle b = getIntent().getExtras();
@@ -51,7 +56,8 @@ public class CheckRouteActivity extends AppCompatActivity implements MapView.Cur
         mMapView.setCurrentLocationEventListener(this);
         mMapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
         route=new ArrayList<>();
-
+        fragment1=new RouteMemoWriteFragment();
+        fragment2=new RouteMemoDetailFragment();
         polyline = new MapPolyline();
         polyline.setTag(1000);
         polyline.setLineColor(Color.argb(128, 255, 51, 0));
@@ -75,7 +81,66 @@ public class CheckRouteActivity extends AppCompatActivity implements MapView.Cur
                         }
                     }
                 });
+        DocumentReference docRef = db.collection("users").document(user_id).collection("routename").document(routename);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.getString("memo")!=null) {
+                        memo=document.getString("memo");
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        Bundle bundle = new Bundle();
+                        bundle.putString("memo", memo);
+                        fragment2.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment2).commit();
+                    } else {
+                        Log.d(TAG, "No such document");
+                        Bundle bundle = new Bundle();
+                        bundle.putString("user_id",user_id);
+                        bundle.putString("routename",routename);
+                        fragment1.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment1).commit();
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
+
     }
+
+    public void onChangeFragment(int index){
+        if(index == 0){
+            Bundle bundle = new Bundle();
+            bundle.putString("user_id",user_id);
+            bundle.putString("routename",routename);
+            bundle.putString("memo",memo);
+            fragment1.setArguments(bundle);
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment1).commit();
+        }else if(index ==1){
+            DocumentReference docRef = db.collection("users").document(user_id).collection("routename").document(routename);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                            memo=document.getString("memo");
+                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                            Bundle bundle = new Bundle();
+                            bundle.putString("memo", memo);
+                            fragment2.setArguments(bundle);
+                            getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment2).commit();
+                    } else {
+                        Log.d(TAG, "get failed with ", task.getException());
+                    }
+                }
+            });
+        }
+    }
+
     public void getMarker(){
         int tagnum = 1;
         System.out.println("getmarker");
