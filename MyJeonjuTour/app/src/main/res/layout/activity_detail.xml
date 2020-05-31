@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2560">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="300"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:text="상세정보"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1600"
+        android:background="#ffffff"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:weightSum="2260">
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="150"
+            android:background="#ffffff"
+            android:paddingLeft="10dp"
+            android:text="제목"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/Content"
+            android:gravity="top"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1800"
+            android:textSize="15dp"
+            android:text="내용"
+            android:background="#ffffff" />
+    </LinearLayout>
+
+</LinearLayout> <!-- weightSum 12 끝 -->
+

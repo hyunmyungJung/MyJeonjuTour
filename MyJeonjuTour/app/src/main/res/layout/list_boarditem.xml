@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:id="@+id/layout"
+        >
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10sp"
+            android:text="글제목"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/item_content"
+            android:gravity="center|left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="글내용"
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:orientation="horizontal" >
+            <TextView
+                android:padding="10dp"
+                android:id="@+id/item_writer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="글쓴이"
+                android:layout_marginRight="28dp"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+            <TextView
+                android:id="@+id/item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2000-00-00"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <ImageButton
+                android:id="@+id/LoginImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="right"
+                android:background="#ffffff"
+                android:src="@drawable/thumb_up2" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

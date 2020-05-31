@@ -6,17 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="350dp"
+        android:weightSum="1440">
+        <net.daum.mf.map.api.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
-    <net.daum.mf.map.api.MapView
-        android:id="@+id/map_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
     <include
         layout="@layout/view_loader"
         android:layout_width="match_parent"
